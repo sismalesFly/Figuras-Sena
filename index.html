@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Figuras Planas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-8">
+    <h1 class="text-3xl font-bold mb-6 text-blue-700">Calculadora de Figuras Planas</h1>
+
+    <section class="w-full max-w-2xl bg-white p-6 rounded shadow-lg resize overflow-auto flex flex-col items-center">
+        <label for="figura" class="block mb-2 text-lg font-medium text-gray-700">Selecciona una figura:</label>
+
+
+        <div class="w-full max-w-md flex flex-row  mb-6 space-x-4 justify-center">
+            <select id="figura" onchange="mostrarInputs()"
+                class="mb-4 p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <option value="">-- Selecciona --</option>
+                <option value="cuadrado">Cuadrado</option>
+                <option value="triangulo">Triángulo Rectangulo</option>
+                <option value="rectangulo">Rectángulo</option>
+                <option value="circulo">Círculo</option>
+                <option value="cubo">Cubo</option>
+                <option value="prisma">Prisma Rectangular</option>
+                <option value="cilindro">Cilindro</option>
+                <option value="piramide">Pirámide Rectangular</option>
+                <option value="esfera">Esfera</option>
+            </select>
+            <!-- Selector de color visual -->
+            <input id="figura-color" type="color" 
+                class="mb-4 w-12 h-12 p-1 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer" />
+
+        </div>
+
+        <div id="inputs-figura" class="mb-2 flex flex-col"></div>
+
+        <button onclick="dibujarFigura()"
+            class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition mb-6">Dibujar</button>
+
+    </section>
+    <section class="w-full max-w-2xl bg-white p-6 rounded shadow-lg mt-8">
+        <p id="resultado" class="font-bold text-green-700 mb-4"></p>
+
+        <div id="canvas-container" class="min-w-[200px] min-h-[200px] w-full h-auto mb-4 hidden">
+        </div>
+        <div id="three-container" class="min-w-[200px] min-h-[200px] w-full h-auto mt-5 bg-white rounded shadow hidden">
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.min.js"></script>
+</body>
+
+</html>
