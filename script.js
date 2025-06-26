@@ -2,7 +2,7 @@ let figuraSeleccionada = "";
 let medidas = {};
 let scene, camera, renderer;
 const escala = 20; // Por ejemplo: 1 unidad = 40 píxeles
-alert("lo resultados se reprensetaran por unidades y es importate no ingresar valores mayores a 10 para ser visualizados correctamente");
+alert("lo resultados se reprensetaran por unidades y es importante no ingresar valores mayores a 10 para ser visualizados correctamente");
 function setup() {
     let canvas = createCanvas(400, 300);
     canvas.parent("canvas-container");
